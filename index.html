@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TataConnect — Verified Housekeeper & Nanny Platform</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-circle">T</div>
+      <div class="logo-text">Tata<span>Connect</span></div>
+    </div>
+
+    <nav class="nav-section">
+      <div class="nav-label">Main</div>
+      <div class="nav-item active" data-page="dashboard">
+        <span class="nav-icon">&#9672;</span> Dashboard
+      </div>
+      <div class="nav-item" data-page="workers">
+        <span class="nav-icon">&#9678;</span> Browse Workers
+      </div>
+      <div class="nav-item" data-page="jobs">
+        <span class="nav-icon">&#9643;</span> Job Postings
+      </div>
+      <div class="nav-item" data-page="profile">
+        <span class="nav-icon">&#9673;</span> Worker Profile
+      </div>
+    </nav>
+
+    <nav class="nav-section">
+      <div class="nav-label">Admin</div>
+      <div class="nav-item" data-page="verify">
+        <span class="nav-icon">&#9672;</span> Verifications
+        <span class="notif-count">3</span>
+      </div>
+      <div class="nav-item" data-page="reports">
+        <span class="nav-icon">&#9639;</span> Reports
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-pill">
+        <div class="avatar-sm">AD</div>
+        <div class="user-info">
+          <div class="user-name">Admin User</div>
+          <div class="user-role">Platform Admin</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="topbar">
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+      <div class="topbar-title" id="page-title">Dashboard</div>
+      <div class="topbar-right">
+        <div class="badge-notif">
+          &#128276;
+          <div class="notif-dot"></div>
+        </div>
+        <button class="btn-primary" id="postJobBtn">+ Post Job</button>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- DASHBOARD PAGE -->
+      <div class="page active" id="page-dashboard">
+        <div class="hero-section">
+          <div class="hero-label">TataConnect &mdash; Verified Platform</div>
+          <div class="hero-title">Find Trusted Domestic Workers in Cameroon</div>
+          <div class="hero-sub">Connect with verified housekeepers and nannies. Every worker is identity-checked, rated, and professionally profiled.</div>
+          <div class="hero-btns">
+            <button class="btn-white" data-goto="workers">Browse Workers</button>
+            <button class="btn-ghost" data-goto="verify">View Verifications</button>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Registered Workers <span class="stat-icon">&#9678;</span></div>
+            <div class="stat-value">284</div>
+            <div class="stat-delta delta-up">&#8593; 12 this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Verified Workers <span class="stat-icon">&#10003;</span></div>
+            <div class="stat-value">191</div>
+            <div class="stat-delta delta-up">&#8593; 5 this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Active Jobs <span class="stat-icon">&#9643;</span></div>
+            <div class="stat-value">47</div>
+            <div class="stat-delta delta-up">&#8593; 8 this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Families Registered <span class="stat-icon">&#9673;</span></div>
+            <div class="stat-value">138</div>
+            <div class="stat-delta delta-up">&#8593; 21 this month</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Recent Workers</div>
+              <button class="btn-outline" data-goto="workers">View all</button>
+            </div>
+            <div class="card-body">
+              <div class="worker-list">
+                <div class="worker-row" data-goto="profile">
+                  <div class="avatar" style="background:#E1F5EE;color:#085041">MN</div>
+                  <div class="worker-info">
+                    <div class="worker-name">Marie Ngono</div>
+                    <div class="worker-sub">Housekeeper &middot; Douala</div>
+                  </div>
+                  <div>
+                    <div class="verified-badge">&#10003; Verified</div>
+                    <div class="stars" style="margin-top:4px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                  </div>
+                </div>
+                <div class="worker-row">
+                  <div class="avatar" style="background:#FAEEDA;color:#633806">AF</div>
+                  <div class="worker-info">
+                    <div class="worker-name">Amina Fofana</div>
+                    <div class="worker-sub">Nanny &middot; Yaound&eacute;</div>
+                  </div>
+                  <div>
+                    <div class="verified-badge">&#10003; Verified</div>
+                    <div class="stars" style="margin-top:4px">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                  </div>
+                </div>
+                <div class="worker-row">
+                  <div class="avatar" style="background:#EEEDFE;color:#3C3489">CT</div>
+                  <div class="worker-info">
+                    <div class="worker-name">Clarisse Tabi</div>
+                    <div class="worker-sub">Cook &amp; Cleaner &middot; Bafoussam</div>
+                  </div>
+                  <div>
+                    <div class="pending-badge">&#8943; Pending</div>
+                    <div class="stars" style="margin-top:4px">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                  </div>
+                </div>
+                <div class="worker-row">
+                  <div class="avatar" style="background:#FAECE7;color:#712B13">RB</div>
+                  <div class="worker-info">
+                    <div class="worker-name">Rose Bella</div>
+                    <div class="worker-sub">Nanny &amp; Childcare &middot; Douala</div>
+                  </div>
+                  <div>
+                    <div class="verified-badge">&#10003; Verified</div>
+                    <div class="stars" style="margin-top:4px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header"><div class="card-title">Recent Activity</div></div>
+            <div class="card-body">
+              <div class="activity-list">
+                <div class="activity-item"><div class="activity-dot teal"></div><div><div class="activity-text">Marie Ngono accepted a job in Douala</div><div class="activity-time">2 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot gold"></div><div><div class="activity-text">New verification request from Clarisse Tabi</div><div class="activity-time">4 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot teal"></div><div><div class="activity-text">Family Kamga posted a new nanny job</div><div class="activity-time">6 hours ago</div></div></div>
+                <div class="activity-item"><div class="activity-dot red"></div><div><div class="activity-text">Review submitted for Amina Fofana &mdash; 4 stars</div><div class="activity-time">Yesterday</div></div></div>
+                <div class="activity-item"><div class="activity-dot teal"></div><div><div class="activity-text">Admin approved Rose Bella's documents</div><div class="activity-time">Yesterday</div></div></div>
+                <div class="activity-item"><div class="activity-dot gold"></div><div><div class="activity-text">3 new employer registrations from Yaound&eacute;</div><div class="activity-time">2 days ago</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><div class="card-title">Workers by City</div></div>
+          <div class="card-body">
+            <div class="chart-bar-row"><div class="chart-label">Douala</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:85%"></div></div><div class="chart-val">112</div></div>
+            <div class="chart-bar-row"><div class="chart-label">Yaound&eacute;</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:65%"></div></div><div class="chart-val">84</div></div>
+            <div class="chart-bar-row"><div class="chart-label">Bafoussam</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:30%"></div></div><div class="chart-val">38</div></div>
+            <div class="chart-bar-row"><div class="chart-label">Bamenda</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:24%"></div></div><div class="chart-val">31</div></div>
+            <div class="chart-bar-row"><div class="chart-label">Kribi</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:15%"></div></div><div class="chart-val">19</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BROWSE WORKERS PAGE -->
+      <div class="page" id="page-workers">
+        <div class="search-bar">
+          <input class="search-input" type="text" placeholder="Search by name or skill..." id="workerSearch">
+          <select class="search-input" style="width:160px" id="cityFilter">
+            <option value="">All Cities</option>
+            <option>Douala</option>
+            <option>Yaound&eacute;</option>
+            <option>Bafoussam</option>
+            <option>Bamenda</option>
+          </select>
+          <select class="search-input" style="width:160px" id="roleFilter">
+            <option value="">All Roles</option>
+            <option>Housekeeper</option>
+            <option>Nanny</option>
+            <option>Cook</option>
+            <option>Live-in</option>
+          </select>
+          <select class="search-input" style="width:140px">
+            <option>Any Rating</option>
+            <option>4+ Stars</option>
+            <option>5 Stars</option>
+          </select>
+          <button class="btn-primary">Search</button>
+        </div>
+
+        <div class="worker-grid" id="workerGrid">
+          <div class="worker-card" data-goto="profile">
+            <div class="wcard-avatar" style="background:#E1F5EE;color:#085041">MN</div>
+            <div class="verified-badge mb8">&#10003; Verified</div>
+            <div class="wcard-name">Marie Ngono</div>
+            <div class="wcard-role">Housekeeper</div>
+            <div class="wcard-loc">&#128205; Douala &middot; 5 yrs exp</div>
+            <div class="skill-tags"><span class="skill-tag">Cleaning</span><span class="skill-tag">Cooking</span><span class="skill-tag">Laundry</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="card-btns"><button class="btn-primary sm">Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+          <div class="worker-card">
+            <div class="wcard-avatar" style="background:#FAEEDA;color:#633806">AF</div>
+            <div class="verified-badge mb8">&#10003; Verified</div>
+            <div class="wcard-name">Amina Fofana</div>
+            <div class="wcard-role">Nanny</div>
+            <div class="wcard-loc">&#128205; Yaound&eacute; &middot; 3 yrs exp</div>
+            <div class="skill-tags"><span class="skill-tag">Childcare</span><span class="skill-tag">Tutoring</span><span class="skill-tag">French</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <div class="card-btns"><button class="btn-primary sm">Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+          <div class="worker-card">
+            <div class="wcard-avatar" style="background:#EEEDFE;color:#3C3489">CT</div>
+            <div class="pending-badge mb8">&#8943; Pending</div>
+            <div class="wcard-name">Clarisse Tabi</div>
+            <div class="wcard-role">Cook &amp; Cleaner</div>
+            <div class="wcard-loc">&#128205; Bafoussam &middot; 2 yrs exp</div>
+            <div class="skill-tags"><span class="skill-tag">Cooking</span><span class="skill-tag">Cleaning</span><span class="skill-tag">English</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+            <div class="card-btns"><button class="btn-primary sm" disabled>Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+          <div class="worker-card">
+            <div class="wcard-avatar" style="background:#FAECE7;color:#712B13">RB</div>
+            <div class="verified-badge mb8">&#10003; Verified</div>
+            <div class="wcard-name">Rose Bella</div>
+            <div class="wcard-role">Nanny &amp; Childcare</div>
+            <div class="wcard-loc">&#128205; Douala &middot; 4 yrs exp</div>
+            <div class="skill-tags"><span class="skill-tag">Infant Care</span><span class="skill-tag">Cooking</span><span class="skill-tag">First Aid</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="card-btns"><button class="btn-primary sm">Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+          <div class="worker-card">
+            <div class="wcard-avatar" style="background:#E6F1FB;color:#0C447C">JK</div>
+            <div class="verified-badge mb8">&#10003; Verified</div>
+            <div class="wcard-name">Joelle Kom</div>
+            <div class="wcard-role">Live-in Housekeeper</div>
+            <div class="wcard-loc">&#128205; Bamenda &middot; 6 yrs exp</div>
+            <div class="skill-tags"><span class="skill-tag">Cleaning</span><span class="skill-tag">Childcare</span><span class="skill-tag">Driving</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="card-btns"><button class="btn-primary sm">Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+          <div class="worker-card">
+            <div class="wcard-avatar" style="background:#EAF3DE;color:#27500A">SN</div>
+            <div class="pending-badge mb8">&#8943; Pending</div>
+            <div class="wcard-name">Sylvie Nkeng</div>
+            <div class="wcard-role">Cook &amp; Nanny</div>
+            <div class="wcard-loc">&#128205; Yaound&eacute; &middot; 1 yr exp</div>
+            <div class="skill-tags"><span class="skill-tag">Cooking</span><span class="skill-tag">Childcare</span></div>
+            <div class="stars fs13">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+            <div class="card-btns"><button class="btn-primary sm" disabled>Hire</button><button class="btn-outline sm">View</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB POSTINGS PAGE -->
+      <div class="page" id="page-jobs">
+        <div class="tab-row">
+          <button class="tab-btn active" data-tab="tab-active">Active Jobs</button>
+          <button class="tab-btn" data-tab="tab-mine">My Postings</button>
+          <button class="tab-btn" data-tab="tab-all">All Listings</button>
+        </div>
+
+        <div class="tab-content active" id="tab-active">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Active Job Listings</div>
+              <button class="btn-primary" id="newJobBtn">+ New Job</button>
+            </div>
+            <div class="card-body nopd">
+              <div class="table-wrap">
+                <table class="jobs-table">
+                  <thead>
+                    <tr><th>Position</th><th>Location</th><th>Salary/Month</th><th>Posted By</th><th>Status</th><th>Actions</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Live-in Nanny</strong><br><span class="sub">Childcare + school runs</span></td>
+                      <td>Douala, Akwa</td><td>55,000 FCFA</td><td>Kamga Family</td>
+                      <td><span class="status-pill status-active">Active</span></td>
+                      <td><button class="btn-outline xs">View</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Part-time Cleaner</strong><br><span class="sub">3 days/week</span></td>
+                      <td>Yaound&eacute;, Bastos</td><td>30,000 FCFA</td><td>Expat Household</td>
+                      <td><span class="status-pill status-active">Active</span></td>
+                      <td><button class="btn-outline xs">View</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Cook &amp; Housekeeper</strong><br><span class="sub">Full-time, live-out</span></td>
+                      <td>Douala, Bonapriso</td><td>65,000 FCFA</td><td>Dr. Essomba</td>
+                      <td><span class="status-pill status-pending">Pending</span></td>
+                      <td><button class="btn-outline xs">View</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Infant Nanny</strong><br><span class="sub">Newborn care &middot; 0&ndash;12 months</span></td>
+                      <td>Bafoussam</td><td>45,000 FCFA</td><td>Mbah Family</td>
+                      <td><span class="status-pill status-active">Active</span></td>
+                      <td><button class="btn-outline xs">View</button></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Housekeeper</strong><br><span class="sub">Weekend only</span></td>
+                      <td>Kribi</td><td>20,000 FCFA</td><td>Vacation Home</td>
+                      <td><span class="status-pill status-closed">Closed</span></td>
+                      <td><button class="btn-outline xs">View</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-content" id="tab-mine">
+          <div class="card"><div class="card-body empty-state">No personal postings yet. Click "+ New Job" to post one.</div></div>
+        </div>
+        <div class="tab-content" id="tab-all">
+          <div class="card"><div class="card-body empty-state">All platform listings will appear here.</div></div>
+        </div>
+      </div>
+
+      <!-- WORKER PROFILE PAGE -->
+      <div class="page" id="page-profile">
+        <div class="profile-layout">
+          <div class="profile-sidebar">
+            <div class="profile-card-left">
+              <div class="profile-avatar-lg" style="background:#E1F5EE;color:#085041">MN</div>
+              <div class="profile-name">Marie Ngono</div>
+              <div class="profile-title">Professional Housekeeper</div>
+              <div class="verified-badge mx-auto mb14">&#10003; Identity Verified</div>
+              <div class="stars fs16 mb4">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <div class="review-sub">4.9 / 5 &middot; 22 reviews</div>
+              <div class="profile-stat-row">
+                <div class="p-stat"><div class="p-stat-val">5</div><div class="p-stat-lbl">Years exp</div></div>
+                <div class="p-stat"><div class="p-stat-val">18</div><div class="p-stat-lbl">Jobs done</div></div>
+                <div class="p-stat"><div class="p-stat-val">100%</div><div class="p-stat-lbl">Hire rate</div></div>
+              </div>
+              <div class="detail-list">
+                <div class="detail-row"><span class="detail-label">Location</span><span>Douala, Akwa</span></div>
+                <div class="detail-row"><span class="detail-label">Phone</span><span>+237 6XX XXX XXX</span></div>
+                <div class="detail-row"><span class="detail-label">Languages</span><span>French, English</span></div>
+                <div class="detail-row"><span class="detail-label">Availability</span><span class="avail-yes">Available Now</span></div>
+              </div>
+              <div class="profile-actions">
+                <button class="btn-primary full">Hire Marie</button>
+                <button class="btn-outline full">View Contract</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-main">
+            <div class="card mb16">
+              <div class="card-header"><div class="card-title">Skills &amp; Experience</div></div>
+              <div class="card-body">
+                <div class="skills-section">
+                  <div class="section-label">SKILLS</div>
+                  <div class="skill-tags large">
+                    <span class="skill-tag teal">Deep Cleaning</span>
+                    <span class="skill-tag teal">Cooking</span>
+                    <span class="skill-tag teal">Laundry &amp; Ironing</span>
+                    <span class="skill-tag teal">Childcare</span>
+                    <span class="skill-tag teal">Grocery Shopping</span>
+                  </div>
+                </div>
+                <div class="work-history">
+                  <div class="section-label">WORK HISTORY</div>
+                  <div class="history-list">
+                    <div class="history-item">
+                      <div class="history-dot"></div>
+                      <div><div class="history-title">Kamga Residence</div><div class="history-sub">Housekeeper &middot; 2022&ndash;Present &middot; Douala</div></div>
+                    </div>
+                    <div class="history-item">
+                      <div class="history-dot"></div>
+                      <div><div class="history-title">Expat Family M&uuml;ller</div><div class="history-sub">Cook &amp; Cleaner &middot; 2020&ndash;2022 &middot; Yaound&eacute;</div></div>
+                    </div>
+                    <div class="history-item">
+                      <div class="history-dot light"></div>
+                      <div><div class="history-title">Private Home</div><div class="history-sub">Housekeeper &middot; 2019&ndash;2020 &middot; Douala</div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><div class="card-title">Reviews</div></div>
+              <div class="card-body">
+                <div class="reviews-list">
+                  <div class="review-item">
+                    <div class="review-header">
+                      <span class="review-author">Kamga Family</span>
+                      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                    <div class="review-text">"Marie is reliable, thorough, and trustworthy. Our home has never been cleaner."</div>
+                    <div class="review-date">March 2025</div>
+                  </div>
+                  <div class="review-item">
+                    <div class="review-header">
+                      <span class="review-author">M&uuml;ller Residence</span>
+                      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    </div>
+                    <div class="review-text">"Excellent cook and very organized. Speaks good English, which was a bonus."</div>
+                    <div class="review-date">December 2022</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VERIFICATIONS PAGE -->
+      <div class="page" id="page-verify">
+        <div class="card mb16">
+          <div class="card-header">
+            <div class="card-title">Pending Verifications</div>
+            <span class="pending-badge" id="pendingCount">3 awaiting review</span>
+          </div>
+          <div class="card-body">
+            <div class="verify-list" id="verifyList">
+              <div class="verify-row">
+                <div class="avatar" style="background:#EEEDFE;color:#3C3489">CT</div>
+                <div class="verify-info">
+                  <div class="verify-name">Clarisse Tabi</div>
+                  <div class="verify-sub">Cook &amp; Cleaner &middot; Bafoussam &middot; Submitted National ID + Reference Letter</div>
+                </div>
+                <div class="verify-actions">
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </div>
+              </div>
+              <div class="verify-row">
+                <div class="avatar" style="background:#EAF3DE;color:#27500A">SN</div>
+                <div class="verify-info">
+                  <div class="verify-name">Sylvie Nkeng</div>
+                  <div class="verify-sub">Cook &amp; Nanny &middot; Yaound&eacute; &middot; Submitted National ID (Reference pending)</div>
+                </div>
+                <div class="verify-actions">
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </div>
+              </div>
+              <div class="verify-row">
+                <div class="avatar" style="background:#FBEAF0;color:#72243E">PP</div>
+                <div class="verify-info">
+                  <div class="verify-name">Patricia Penda</div>
+                  <div class="verify-sub">Housekeeper &middot; Douala &middot; Submitted National ID + 2 Reference Letters</div>
+                </div>
+                <div class="verify-actions">
+                  <button class="btn-approve">Approve</button>
+                  <button class="btn-reject">Reject</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Recently Verified</div></div>
+          <div class="card-body">
+            <div class="worker-list">
+              <div class="worker-row">
+                <div class="avatar" style="background:#E1F5EE;color:#085041">MN</div>
+                <div class="worker-info"><div class="worker-name">Marie Ngono</div><div class="worker-sub">Verified 3 days ago &middot; by Admin</div></div>
+                <div class="verified-badge">&#10003; Approved</div>
+              </div>
+              <div class="worker-row">
+                <div class="avatar" style="background:#FAECE7;color:#712B13">RB</div>
+                <div class="worker-info"><div class="worker-name">Rose Bella</div><div class="worker-sub">Verified 5 days ago &middot; by Admin</div></div>
+                <div class="verified-badge">&#10003; Approved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REPORTS PAGE -->
+      <div class="page" id="page-reports">
+        <div class="stats-grid mb20">
+          <div class="stat-card"><div class="stat-label">Total Hires</div><div class="stat-value">89</div><div class="stat-delta delta-up">&#8593; 14 this month</div></div>
+          <div class="stat-card"><div class="stat-label">Avg Rating</div><div class="stat-value">4.6</div><div class="stat-delta delta-up">&#8593; 0.2 vs last month</div></div>
+          <div class="stat-card"><div class="stat-label">Disputes</div><div class="stat-value">2</div><div class="stat-delta delta-down">&#8595; 1 resolved</div></div>
+          <div class="stat-card"><div class="stat-label">Revenue (FCFA)</div><div class="stat-value">1.2M</div><div class="stat-delta delta-up">&#8593; commission fees</div></div>
+        </div>
+        <div class="two-col mb16">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Monthly Registrations</div></div>
+            <div class="card-body">
+              <div class="chart-bar-row"><div class="chart-label">April</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:72%"></div></div><div class="chart-val">36</div></div>
+              <div class="chart-bar-row"><div class="chart-label">March</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:60%"></div></div><div class="chart-val">30</div></div>
+              <div class="chart-bar-row"><div class="chart-label">February</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:48%"></div></div><div class="chart-val">24</div></div>
+              <div class="chart-bar-row"><div class="chart-label">January</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:38%"></div></div><div class="chart-val">19</div></div>
+              <div class="chart-bar-row"><div class="chart-label">December</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:28%"></div></div><div class="chart-val">14</div></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Role Distribution</div></div>
+            <div class="card-body">
+              <div class="chart-bar-row"><div class="chart-label">Housekeeper</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:80%"></div></div><div class="chart-val">142</div></div>
+              <div class="chart-bar-row"><div class="chart-label">Nanny</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:60%"></div></div><div class="chart-val">98</div></div>
+              <div class="chart-bar-row"><div class="chart-label">Cook</div><div class="chart-bar-wrap"><div class="chart-bar-fill" style="width:28%"></div></div><div class="chart-val">44</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Platform Insights</div></div>
+          <div class="card-body">
+            <div class="insights-grid">
+              <div class="insight-box teal-bg">
+                <div class="insight-label">Top City</div>
+                <div class="insight-value">Douala</div>
+                <div class="insight-sub">112 workers &middot; 58 employers</div>
+              </div>
+              <div class="insight-box gold-bg">
+                <div class="insight-label">Most Hired</div>
+                <div class="insight-value">Housekeeper</div>
+                <div class="insight-sub">50% of all hires</div>
+              </div>
+              <div class="insight-box purple-bg">
+                <div class="insight-label">Avg Salary</div>
+                <div class="insight-value">45K FCFA</div>
+                <div class="insight-sub">per month</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </div><!-- /main -->
+
+  <!-- POST JOB MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">Post a New Job</div>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Position Title</label>
+          <input type="text" class="form-input" placeholder="e.g. Live-in Nanny">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>City</label>
+            <select class="form-input">
+              <option>Douala</option><option>Yaound&eacute;</option><option>Bafoussam</option><option>Bamenda</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Role Type</label>
+            <select class="form-input">
+              <option>Housekeeper</option><option>Nanny</option><option>Cook</option><option>Live-in</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Monthly Salary (FCFA)</label>
+          <input type="number" class="form-input" placeholder="e.g. 50000">
+        </div>
+        <div class="form-group">
+          <label>Job Description</label>
+          <textarea class="form-input" rows="3" placeholder="Describe duties, schedule, requirements..."></textarea>
+        </div>
+        <div class="form-actions">
+          <button class="btn-outline" id="cancelBtn">Cancel</button>
+          <button class="btn-primary">Post Job</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
