@@ -55,7 +55,7 @@ tataconnect/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/tataconnect.git
+git clone https://github.com/Sheva-1/tataconnect.git
 cd tataconnect
 
 # Install frontend dependencies
