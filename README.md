@@ -2,6 +2,9 @@
 
 A full-stack web application connecting verified housekeepers and nannies with families in Cameroon, built with React, TypeScript, Express, and modern cloud integrations.
 
+[![GitHub](https://img.shields.io/badge/GitHub-Sheva--1/tataconnect-blue)](https://github.com/Sheva-1/tataconnect)
+[![License](https://img.shields.io/badge/License-ISC-green)](./LICENSE)
+
 ## 🏗️ Tech Stack
 
 | Layer | Technology |
@@ -50,12 +53,13 @@ tataconnect/
 - Node.js 18+
 - npm or yarn
 - Git
+- Supabase CLI (optional, for local development)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/tataconnect.git
+git clone https://github.com/Sheva-1/tataconnect.git
 cd tataconnect
 
 # Install frontend dependencies
@@ -67,8 +71,7 @@ cd backend && npm install && cd ..
 
 ### Environment Setup
 
-Copy the example files and add your API keys:
-
+#### 1. Copy Environment Files
 ```bash
 # Frontend
 cp .env.example .env.local
@@ -77,14 +80,29 @@ cp .env.example .env.local
 cp backend/.env.example backend/.env
 ```
 
-Fill in the required environment variables:
+#### 2. Set Up Supabase (Required First)
+```bash
+# Install Supabase CLI
+npm install -g supabase
+
+# Login to Supabase
+supabase login
+
+# Create a new project or link existing
+supabase link --project-ref YOUR_PROJECT_REF
+
+# Push database schema
+cd backend && npx prisma db push && cd ..
+```
+
+#### 3. Configure Environment Variables
 
 **Frontend (.env.local):**
 ```env
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_ANON_KEY=your-anon-key
-VITE_SENTRY_DSN=your-sentry-dsn
-VITE_POSTHOG_KEY=your-posthog-key
+VITE_SENTRY_DSN=https://your-sentry-dsn@sentry.io/project-id
+VITE_POSTHOG_KEY=your-posthog-project-key
 VITE_POSTHOG_HOST=https://app.posthog.com
 ```
 
@@ -92,12 +110,15 @@ VITE_POSTHOG_HOST=https://app.posthog.com
 ```env
 PORT=4000
 DATABASE_URL="file:./prisma/dev.db"
-SENTRY_DSN=your-sentry-dsn
-RESEND_API_KEY=your-resend-api-key
-POSTHOG_API_KEY=your-posthog-api-key
-UPSTASH_REDIS_REST_URL=your-upstash-url
-UPSTASH_REDIS_REST_TOKEN=your-upstash-token
-PINECONE_API_KEY=your-pinecone-key
+# For production, use: DATABASE_URL="postgresql://postgres:[password]@db.[project-ref].supabase.co:5432/postgres"
+
+# Services
+SENTRY_DSN=https://your-sentry-dsn@sentry.io/project-id
+RESEND_API_KEY=re_xxxxxxxxxxxx
+POSTHOG_API_KEY=your-posthog-project-api-key
+UPSTASH_REDIS_REST_URL=https://your-redis-url.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your-redis-token
+PINECONE_API_KEY=your-pinecone-api-key
 ```
 
 ### Development
@@ -165,7 +186,8 @@ npm run seed
 ```
 
 **Production (Supabase PostgreSQL):**
-Update `DATABASE_URL` in `.env` to your Supabase connection string.
+1. Update `DATABASE_URL` in `.env` to your Supabase connection string
+2. Run migrations: `npx prisma db push`
 
 ## 📈 Monitoring & Analytics
 
@@ -186,6 +208,34 @@ vercel
 1. Connect GitHub repository
 2. Set environment variables
 3. Deploy from `backend/` directory
+
+## 🔧 Troubleshooting
+
+### Common Issues
+
+**Supabase Connection Issues:**
+```bash
+# Check Supabase status
+supabase status
+
+# Reset local development
+supabase stop
+supabase start
+```
+
+**Database Issues:**
+```bash
+# Reset database
+cd backend && npx prisma db push --force-reset
+
+# View database
+npx prisma studio
+```
+
+**Environment Variables:**
+- Ensure all required variables are set
+- Check for typos in API keys
+- Use `.env.local` for frontend (not `.env`)
 
 ## 📝 Environment Variables Reference
 
